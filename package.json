@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "BlogPost",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Manjot Singh",
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.6",
