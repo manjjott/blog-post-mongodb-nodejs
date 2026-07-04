@@ -1,11 +1,65 @@
-<h1>🌐 Interactive Blogpost Web Application</h1>
-<p>This project is an interactive blogpost web application built using EJS, JavaScript, CSS, HTML, Node.js, Express.js, and MongoDB. It allows users to create, read, update, and delete blogposts dynamically, leveraging the power of MongoDB's NoSQL database. 📚</p>
-<h2>✨ Features:</h2>
-<ul>
-  <li>📝 Create and publish blogposts with a user-friendly interface. ✍️</li>
-  <li>👀 View and read blogposts in a visually appealing layout. 📖</li>
-  <li>✏️ Edit and update existing blogposts effortlessly. 🖊️</li>
-  <li>🗑️ Delete unwanted blogposts with a simple click. 🚮</li>
-</ul>
-<p>The application utilizes MongoDB 🍃 as the database system, which provides a flexible and scalable solution for storing and retrieving blogpost data. MongoDB's NoSQL nature allows for easy schema-less data storage, making it convenient to handle blogpost content with varying structures. 🗃️</p>
-<p>Get started by cloning this repository and installing the necessary dependencies. Ensure you have MongoDB installed and running locally or use a remote MongoDB service. Configure the application to connect to your MongoDB database and run the application locally. You're now ready to start sharing your thoughts and ideas through engaging blogposts, while benefiting from the flexibility and scalability of MongoDB. Enjoy the seamless experience of this interactive blogpost web application! 🚀🌟</p>
+# Interactive Blog Post Web Application
+
+A small CRUD blog application built with Node.js, Express, EJS, and MongoDB. Users can create, list, read, edit, and delete blog posts stored in MongoDB.
+
+## Features
+
+- Create posts with a title, summary, content, and author.
+- View all posts ordered by most recent first.
+- Read individual post details with formatted publication dates.
+- Edit existing posts.
+- Delete posts from the list page.
+- Render friendly 404 and 500 error pages.
+
+## Requirements
+
+- Node.js
+- npm
+- MongoDB running locally or reachable via a connection string
+
+## Getting Started
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start MongoDB and ensure an `authors` collection exists in the `blog` database. Example author document:
+
+```json
+{
+  "name": "Ada Lovelace",
+  "email": "ada@example.com"
+}
+```
+
+Run the application:
+
+```bash
+npm start
+```
+
+The app listens on `http://localhost:3000` by default.
+
+## Configuration
+
+The following environment variables are optional:
+
+- `PORT` - server port. Defaults to `3000`.
+- `MONGODB_URL` - MongoDB connection URL. Defaults to `mongodb://127.0.0.1:27017`.
+- `MONGODB_DATABASE` - database name. Defaults to `blog`.
+
+## Development
+
+Run the app with automatic restarts:
+
+```bash
+npm run dev
+```
+
+Run syntax checks:
+
+```bash
+npm run check
+```

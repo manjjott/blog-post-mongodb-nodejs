@@ -2,18 +2,21 @@ const mongodb = require("mongodb");
 
 const MongoClient = mongodb.MongoClient;
 
+const mongoDbUrl = process.env.MONGODB_URL || "mongodb://127.0.0.1:27017";
+const databaseName = process.env.MONGODB_DATABASE || "blog";
+
 let database;
 
 async function connect() {
-  const client = await MongoClient.connect("mongodb://127.0.0.1:27017");
-  database = client.db("blog");
+  const client = await MongoClient.connect(mongoDbUrl);
+  database = client.db(databaseName);
 }
 
 // Function to get the database
 function getDb() {
   if (!database) {
     throw {
-      message: "Databse connection not established !",
+      message: "Database connection not established!",
     };
   }
   return database;

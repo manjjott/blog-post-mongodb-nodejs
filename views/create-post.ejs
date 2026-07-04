@@ -25,13 +25,17 @@
       </div>
       <div class="form-control">
         <label for="author">Select Author</label>
-        <select id="author" name="author">
-          <% for (const author of authors) { %>
-            <option value="<%= author._id %>"><%= author.name %></option>
+        <select id="author" name="author" required>
+          <% if (!authors || authors.length === 0) { %>
+            <option value="" disabled>No authors available</option>
+          <% } else { %>
+            <% for (const author of authors) { %>
+              <option value="<%= author._id %>"><%= author.name %></option>
+            <% } %>
           <% } %>
         </select>
       </div>
-      <button class="btn">Add Post</button>
+      <button class="btn" <% if (!authors || authors.length === 0) { %>disabled<% } %>>Add Post</button>
     </form>
   </main>
 </body>
